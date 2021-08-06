@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+  <title>Top Anime</title>
+
+  <link href="reset.css" rel="stylesheet" type="text/css" />
+  <link href="base.css" rel="stylesheet" type="text/css" />
+    <!--[if IE ]>
+    <link href="iefi xes.css" rel="stylesheet" type="text/css">
+    <![endif]-->
+
+  <style type="text/css">
+  </style>
+  <style>
+    #audio {
+      position: absolute;
+      z-index: 3;
+    }
+
+    #canvas {
+      position: absolute;
+      z-index: 1;
+    }
+  </style>
+  <script>
+  var ctx;
+    var img;
+    var x = 0;
+    var y = -14;
+
+    function setup() {
+      var canvas = document.getElementById('canvas');
+
+      if (canvas.getContext) {
+        ctx = canvas.getContext('2d');
+        setInterval('draw();', 36);
+        img = new Image();
+        img.src = 'images/blood.png';
+      }
+    }
+
+    function draw() {
+
+        ctx.drawImage(img, x, y);
+      y += 1.5;
+      if (y > 500) {
+        y = -18;
+        x = Math.random() * 960;
+      }
+    }
+  </script>
+</head>
+
+<body id="Elfenlied" onload="setup();">
+
+  <!-- This is the beginning of the wrapping div. This div will nest all of the other page elements and have a fixed-width.-->
+  <div id="wrap">
+
+    <!-- This is the beginning of the masthead div. Sometimes known as the "header", this div will contain the site logo and eventually other sections such as the secondary navigation .-->
+    <div id="masthead">
+      <div id="topAnimeTitle">TOP-ANIME </div>
+      <img src="images/Anime-Logo.png" width="200" height="150" alt="" />
+    </div>
+    <!-- End of Masthead Div-->
+
+    <!-- This is the beginning of the main navigation div. We call this "mainnav" because it will serve as users primary method of navigation.-->
+    <div id="mainnav">
+      <ul>
+        <li><a class="nav-home" href="index.html">Home</a></li>
+        <li><a class="nav-luckystar" href="luckystar.html">Lucky Star</a></li>
+        <li><a class="nav-trigun" href="trigun.html">Trigun</a></li>
+        <li><a class="nav-DB" href="DB.html">Dragon Ball</a></li>
+        <li><a class="nav-Elfenlied" href="elfenlied.html">Elfen Lied</a></li>
+        <li><a class="nav-Ranma" href="ranma.html">Ranma 1/2</a></li>
+        <li><a class="nav-contact" href="contact.html">Contact Me</a></li>
+      </ul>
+    </div>
+    <!-- End of mainnav Div-->
+
+    <!-- This is the beginning of the innerwrap section, called so because it nests the sidebar and maincontent but is itself nested within the wrap div..-->
+    <div id="innerwrap">
+      <canvas id="canvas" width="960" height="938" >
+        
+      </canvas>
+      <!-- This is the beginning of the sidebar. Although this sidebar will be positioned to the left, you want to avoid giving sidebars names such as 'left' or 'right', this avoids confusion if you decide to move the sidebar at any point.-->      
+      <div id="sidebar">
+       <img src="images/lucy.jpg" margin-top="10" alt="">
+
+      <div id="audio">
+        <audio controls>
+          <source src="sounds/Elfen Lied - Lilium (Music Box).mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      </div>
+      <!-- End of Sidebar Div-->
+
+
+      <!-- This is the beginning of the main column which is named so because it holds the primary content of the site..-->
+      <div id="maincontent">
+        <h1>Elfen Lied</h1>
+        <p>Lucy is a special breed of human referred to as "Diclonius," born with a short pair of horns and invisible telekinetic
+        hands that lands her as a victim of inhumane scientific experimentation by the government. However, once circumstances
+        present her an opportunity to escape, Lucy, corrupted by the confinement and torture, unleashes a torrent of bloodshed
+        as she escapes her captors.</p>
+
+        <p>During her breakout, she receives a crippling head injury that leaves her with a split personality: someone with the
+        mentality of a harmless child possessing limited speech capacity. In this state of instability, she stumbles upon two
+        college students, Kouta and his cousin Yuka, who unknowingly take an injured fugitive into their care, unaware of her
+        murderous tendencies. This act of kindness will change their lives, as they soon find themselves dragged into the
+        shadowy world of government secrecy and conspiracy.</p>
+
+        <p>&nbsp;</p>
+      </div>
+      <!-- End of Main Div-->
+
+    </div>
+    <!-- End of Innerwrap Div-->
+
+    <!-- This is the beginning of the  footer will live at the bottom of the page, although it is still nested within the -->
+    <div id="footer"> 
+      <p>Copyright Top Anime 2019</p>
+      
+      <p>Registration on or use of this site constitutes acceptance of our <a href="useragreement.html"> user agreement </a> and <a href="privacy.html">Privacy Policy.</a></p>
+    </div>
+    <!-- End of Footer Div-->
+
+  </div>
+  <!-- End of the Wrap Div-->
+
+</body>
+</html>
